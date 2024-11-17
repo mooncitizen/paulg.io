@@ -1,7 +1,5 @@
-import Header from "@/components/Header";
-import Subtitle from "@/components/Subtitle";
+// import Header from "@/components/Header";
 import PageLayout from "@/components/PageLayout";
-import Feed from "@/components/Feed";
 import TimeOfService from "@/components/TimeOfService";
 
 export default function Home() {
@@ -21,7 +19,6 @@ export default function Home() {
         <div className="text-gray-600"><a href="mailto:me@paulg.io">me@paulg.io</a></div>
       </div>
       <div className="mt-10">
-        {/* <Feed /> */}
       </div>
     </PageLayout>
   );

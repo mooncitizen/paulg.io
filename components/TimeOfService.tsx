@@ -3,10 +3,18 @@
 import { useEffect, useState } from "react";
 import CountUp from 'react-countup';
 
+type TimeInIndustry = {
+    years: number;
+    months: number;
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
 export default function TimeOfService() {
 
-
-    const [timeInIndustry, setTimeInIndustry] = useState<any>(null);
+    const [timeInIndustry, setTimeInIndustry] = useState<TimeInIndustry>();
 
     useEffect(() => {
         fetch("/api/cv")

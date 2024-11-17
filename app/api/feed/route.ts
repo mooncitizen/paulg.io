@@ -60,6 +60,7 @@ const fakeFeed = (amount: number) => {
 }
 
 export async function GET(request: Request) {
+  console.log(request.url)
   return NextResponse.json({ 
     feed: fakeFeed(10),
     tweets: fakeTweetFeed(10)

@@ -113,7 +113,8 @@ const techStack = [
 
 export async function GET(request: Request) {
 
-    const exp = experience.sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime());
+    console.log(request.url)
+
     const oldestDate = new Date(Math.min(...experience.map(e => new Date(e.startDate).getTime())));
     const today = new Date();
     const diff = today.getTime() - oldestDate.getTime();
