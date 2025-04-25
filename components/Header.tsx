@@ -1,26 +1,53 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Link from 'next/link';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-export default function Header({ title, subtitle }: { title: string, subtitle: string }) {
-
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.playbackRate = 0.9;
-        }
-    }, []);
+export default function Header() {
   return (
-    <div className="w-full">
-        <div className="w-full rounded-xl overflow-hidden relative">
-            <div className="absolute top-10 left-10 right-10 text-white z-20">
-                <div className="text-4xl font-bold uppercase">{title}</div>
-                <div className="text-sm  font-extralight">{subtitle}</div>
-            </div>
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-[3px] backdrop-filter z-10" />
-            <video ref={videoRef} src="https://paulg.ittybitcdn.com/live/space.mp4" muted autoPlay loop />
-        </div>
-    </div>
+    <header className="w-full flex justify-between items-center py-6">
+      <div className="text-2xl font-bold">
+        <Link href="/">
+          Paul Gardiner
+        </Link>
+      </div>
+      
+      <nav className="hidden md:flex gap-8 text-sm font-medium">
+        <Link href="/#about" className="hover:text-indigo-600 transition-colors">
+          About
+        </Link>
+        <Link href="/#skills" className="hover:text-indigo-600 transition-colors">
+          Skills
+        </Link>
+        <Link href="/#experience" className="hover:text-indigo-600 transition-colors">
+          Experience
+        </Link>
+        <Link href="/#projects" className="hover:text-indigo-600 transition-colors">
+          Projects
+        </Link>
+        <Link href="/#contact" className="hover:text-indigo-600 transition-colors">
+          Contact
+        </Link>
+      </nav>
+      
+      <div className="flex gap-4">
+        <a href="https://github.com/mooncitizen" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <FaGithub className="w-5 h-5 hover:text-indigo-600 transition-colors" />
+        </a>
+        <a href="https://linkedin.com/in/piloate" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <FaLinkedin className="w-5 h-5 hover:text-indigo-600 transition-colors" />
+        </a>
+        <a href="https://bsky.app/profile/paulg.io" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+          <div className="w-5 h-5 flex items-center justify-center hover:text-indigo-600 transition-colors">
+            <svg viewBox="0 0 600 530" fill="currentColor" className="w-5 h-5">
+              <path d="M497.755127,470.744995 C485.020508,483.933563 472.004242,496.230164 456.677277,505.861084 C441.365479,515.482483 425.079437,522.303406 406.705383,521.900757 C389.602600,521.526123 374.803009,514.820496 362.017303,503.530273 C338.982605,483.189880 325.491089,456.689789 314.113556,428.909454 C309.944763,418.730591 306.657318,408.191498 302.924957,397.832184 C302.560944,396.821869 301.893585,395.920868 300.820892,393.981903 C299.330048,397.986694 298.085297,401.044708 297.044586,404.170624 C287.765533,432.041504 276.515869,459.017548 258.944946,482.797150 C245.718781,500.696716 229.951324,515.473328 207.125809,520.483093 C192.149918,523.770020 177.973679,521.144287 164.078598,515.556274 C138.354965,505.211273 118.806931,486.614990 100.521988,466.754303 C87.137993,452.216949 77.181564,435.187927 74.335983,415.268005 C71.956177,398.608643 76.104729,383.044800 86.816048,369.731537 C106.220131,345.613800 133.414886,335.057587 161.991333,326.996521 C163.359940,326.610474 164.711517,326.164032 166.046005,325.000305 C160.418030,325.000305 154.780624,325.212433 149.163696,324.963196 C125.999908,323.935455 103.559013,319.868378 82.613327,309.256317 C53.304012,294.406860 34.953224,270.618530 26.377338,239.359528 C23.679420,229.525635 23.317982,219.040085 22.018356,208.836090 C20.612564,197.798523 19.265915,186.751602 18.072855,175.689407 C17.227476,167.850937 16.663912,159.981689 16.003172,152.123779 C14.667380,136.237762 12.951276,120.370575 12.137438,104.457497 C11.298490,88.053436 10.400308,71.551888 11.302755,55.190880 C12.033246,41.947414 16.327457,29.259668 26.747292,19.755520 C32.198025,14.783790 38.712654,12.231097 45.919098,10.965860 C64.736229,7.662127 81.785431,13.929002 98.340469,21.258774 C118.597145,30.227453 136.684372,42.821758 153.130081,57.673885 C162.457077,66.097107 172.077972,74.277138 180.677505,83.404297 C193.424057,96.932953 205.941422,110.757614 217.539108,125.269249 C233.615707,145.385132 249.284744,165.877884 264.101440,186.931915 C274.364532,201.515427 282.946472,217.287216 292.171448,232.593231 C295.183014,237.590057 297.853607,242.792374 300.941162,248.372314 C303.390564,244.103027 305.787354,240.159851 307.962067,236.097809 C324.993835,204.285172 345.299042,174.619064 367.416870,146.193466 C378.075745,132.494766 389.180756,119.115196 400.614807,106.056061 C410.749695,94.480766 421.148071,83.055229 432.266113,72.439102 C453.377899,52.280392 475.929352,33.921131 502.787903,21.648512 C516.490906,15.387114 530.631287,10.285848 545.828247,10.109745 C569.875427,9.831087 583.471313,21.912401 588.854614,44.675606 C592.492432,60.057838 591.610962,75.814095 590.062744,91.476868 C589.527832,96.888031 589.353882,102.334572 588.999756,107.763962 C588.002563,123.052612 587.215942,138.359085 585.936584,153.624176 C584.525696,170.459686 583.090820,187.314331 580.866272,204.054321 C578.792114,219.662567 577.828369,235.509644 572.048340,250.485138 C562.958557,274.036102 548.045227,292.529572 526.187927,305.416412 C509.668793,315.155975 491.909760,321.013855 472.906372,322.948242 C460.602966,324.200684 448.239929,324.867737 436.439728,325.756714 C442.743805,327.699799 449.845001,329.619019 456.757538,332.070190 C476.773499,339.167816 495.693909,348.330902 510.482300,364.082367 C523.696045,378.156616 530.251709,395.072510 527.809937,414.388611 C525.774536,430.489929 518.467773,444.742004 508.758514,457.666901 C505.412140,462.121613 501.602386,466.228271 497.755127,470.744995 z" />
+            </svg>
+          </div>
+        </a>
+        <a href="mailto:me@paulg.io" aria-label="Email">
+          <FaEnvelope className="w-5 h-5 hover:text-indigo-600 transition-colors" />
+        </a>
+      </div>
+    </header>
   );
 }
