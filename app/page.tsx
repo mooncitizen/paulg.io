@@ -2,11 +2,8 @@
 
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
-import { useState } from "react";
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   // Tech stack data
   const skillCategories = [
     {
@@ -90,13 +87,13 @@ export default function Home() {
             className="space-y-4"
           >
             <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight">
-              Hi, I'm <span className="text-indigo-600 animate-float-slow inline-block">Paul Gardiner</span>
+              Hi, I&apos;m <span className="text-indigo-600 animate-float-slow inline-block">Paul Gardiner</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
               Software Engineer & CTO at Ittybit
             </p>
             <p className="max-w-3xl text-gray-700 dark:text-gray-300">
-              With 19 years in the technology sector, I've led teams across startups and major organizations, 
+              With 19 years in the technology sector, I&apos;ve led teams across startups and major organizations, 
               delivering exceptional products for world-renowned brands. My expertise spans Web, Mobile, and Desktop 
               environments, with a passion for creating functional, high-quality solutions.
             </p>
@@ -111,7 +108,7 @@ export default function Home() {
               <a
                 href="#projects"
                 className="bg-transparent border border-gray-300 hover:border-indigo-600 px-6 py-3 rounded-md font-medium transition-colors backdrop-blur-sm bg-white/10 dark:bg-black/10"
-                aria-label="View Paul's work"
+                aria-label="View Paul&apos;s work"
               >
                 View My Work
               </a>
@@ -140,12 +137,12 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-10">
               <div className="space-y-4">
                 <p className="text-lg leading-relaxed">
-                  👋 Hello! I'm a passionate technologist with <span className="font-semibold text-indigo-600">19 years</span> in the industry. 
-                  I've had the exciting journey of founding and scaling a tech startup, while also enjoying rewarding work as a contractor.
+                  👋 Hello! I&apos;m a passionate technologist with <span className="font-semibold text-indigo-600">19 years</span> in the industry. 
+                  I&apos;ve had the exciting journey of founding and scaling a tech startup, while also enjoying rewarding work as a contractor.
                 </p>
                 <p className="text-lg leading-relaxed">
                   ✨ I love creating high-quality products that solve real problems. Leading teams is where I thrive - 
-                  whether it's small focused groups or large remote teams tackling complex challenges.
+                  whether it&apos;s small focused groups or large remote teams tackling complex challenges.
                 </p>
                 <p className="text-lg leading-relaxed">
                   🌐 My experience spans across Banking, Healthcare, and various Startups, which has taught me 
@@ -160,12 +157,12 @@ export default function Home() {
                   <span>What I Do</span>
                 </h3>
                 <p className="text-lg leading-relaxed">
-                  I'm a Full Stack Developer who enjoys tackling challenges across the entire development spectrum. 
+                  I&apos;m a Full Stack Developer who enjoys tackling challenges across the entire development spectrum. 
                   My core strengths are in JavaScript and Python, with extensive experience in React, React Native, 
                   FastAPI, and Django.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Recently, I've been exploring Rust and Go while continuing to deepen my expertise in my favorite tools and frameworks.
+                  Recently, I&apos;ve been exploring Rust and Go while continuing to deepen my expertise in my favorite tools and frameworks.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-6">
                   {["Full Stack", "Frontend", "Backend", "Infrastructure", "AI/ML"].map((skill, index) => (
@@ -402,14 +399,14 @@ export default function Home() {
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center text-white text-xl">
                 ✉️
               </div>
-              <h2 id="contact-heading" className="text-3xl font-bold">Let's Connect</h2>
+              <h2 id="contact-heading" className="text-3xl font-bold">Let&apos;s Connect</h2>
             </div>
             
             <div className="grid md:grid-cols-2 gap-10 relative">
               <div className="space-y-6">
                 <p className="text-lg">
-                  I'm always open to discussing new projects, opportunities, or partnerships.
-                  Feel free to reach out if you'd like to work together!
+                  I&apos;m always open to discussing new projects, opportunities, or partnerships.
+                  Feel free to reach out if you&apos;d like to work together!
                 </p>
                 
                 <div className="space-y-4 mt-8">
